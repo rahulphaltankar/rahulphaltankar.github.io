@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ovalfort: know where you stand on AI and privacy law</title>
+<meta name="description" content="A free one-page check of which AI and privacy laws reach your company, and a deep dive that tests you against the EU AI Act, EU GDPR, UK GDPR and India's DPDP and CERT-In rules, with the line of law behind every finding.">
+<meta property="og:title" content="Ovalfort: know where you stand on AI and privacy law">
+<meta property="og:description" content="Scan for a free one-page check. Go deeper with a full reading across the EU AI Act, EU GDPR, UK GDPR and India. Every finding links to the official text.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<style>
+:root{
+  --bg:#fbfbfd;--bg2:#f2f2f5;--ink:#1d1d1f;--muted:#6e6e73;--line:#d9d9de;--card:#fff;
+  --accent:#0a6cff;--accent-ink:#fff;--dark:#0b0d12;--dark-ink:#f5f5f7;--dark-muted:#a1a1aa;
+  --good:#1b7f4b;--warn:#a15c00;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b0d12;--bg2:#12151c;--ink:#f5f5f7;--muted:#a1a1aa;--line:#262a33;--card:#161a22;
+  --accent:#4c9bff;--accent-ink:#06101f;--good:#4cc38a;--warn:#e0a24a;
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px}
+nav{position:sticky;top:0;z-index:20;backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid transparent;transition:border-color .2s}
+nav.scrolled{border-bottom-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
+.brand{font-weight:650;letter-spacing:.01em;color:var(--ink);text-decoration:none}
+.links{display:flex;gap:22px;align-items:center;font-size:14px}
+.links a{color:var(--muted);text-decoration:none}
+.links a:hover{color:var(--ink)}
+.pill{background:var(--accent);color:var(--accent-ink)!important;padding:6px 14px;border-radius:999px;font-weight:600}
+@media (max-width:720px){.links a:not(.pill){display:none}}
+
+/* hero */
+.hero{background:radial-gradient(1200px 520px at 50% -10%,rgba(76,155,255,.22),transparent 60%),var(--dark);color:var(--dark-ink);text-align:center;padding:104px 0 96px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dark-muted);margin:0 0 18px}
+h1{font-size:clamp(38px,7vw,72px);line-height:1.04;letter-spacing:-.03em;margin:0 auto 22px;max-width:15ch;font-weight:700}
+.hero .sub{font-size:clamp(18px,2.4vw,23px);color:var(--dark-muted);max-width:44ch;margin:0 auto 34px;line-height:1.4}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;font-size:17px;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--dark-ink);border-color:rgba(255,255,255,.28)}
+.btn.line{color:var(--accent);border-color:var(--accent);background:transparent}
+.lawrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:46px 0 0;padding:0;list-style:none}
+.lawrow li{font-size:14px;color:var(--dark-muted);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 14px}
+
+/* sections */
+section{padding:96px 0}
+section.alt{background:var(--bg2)}
+h2{font-size:clamp(30px,5vw,48px);line-height:1.08;letter-spacing:-.025em;margin:0 0 18px;font-weight:700}
+h3{font-size:21px;line-height:1.25;margin:0 0 8px;letter-spacing:-.01em}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 14px}
+.lede{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:46ch;line-height:1.45;margin:0 0 40px}
+p{margin:0 0 14px}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:860px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.card p{color:var(--muted);font-size:16px;margin:0}
+.big{font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+
+/* sample reading */
+.sample{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;max-width:460px;margin:0 auto;box-shadow:0 24px 60px -30px rgba(0,0,0,.35)}
+.sample small{display:block;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.row:first-of-type{border-top:0}
+.tag{font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;white-space:nowrap;align-self:center}
+.t-ok{background:rgba(27,127,75,.14);color:var(--good)}
+.t-q{background:rgba(161,92,0,.14);color:var(--warn)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+
+/* compare toggle */
+.seg{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px;flex-wrap:wrap}
+section.alt .seg{background:var(--bg)}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:15px;padding:8px 18px;border-radius:999px;cursor:pointer}
+.seg button[aria-selected="true"]{background:var(--ink);color:var(--bg);font-weight:600}
+.panel{margin-top:28px}
+.js .panel[hidden]{display:none}
+.panel .card{max-width:720px}
+.panel ul{margin:12px 0 0;padding-left:20px;color:var(--muted)}
+.panel li{margin-bottom:8px}
+.panel li strong{color:var(--ink);font-weight:600}
+.badge{display:inline-block;font-size:12px;font-weight:600;color:var(--warn);background:rgba(161,92,0,.14);border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:middle}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:14px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:700}
+.steps p{color:var(--muted);font-size:16px;margin:0}
+.steps h3{font-size:18px;margin-bottom:4px}
+
+/* dark band */
+.dark{background:var(--dark);color:var(--dark-ink)}
+.dark .lede,.dark p{color:var(--dark-muted)}
+.dark .card{background:#141821;border-color:#262a33}
+.dark .card p{color:var(--dark-muted)}
+.dark .kicker{color:#4c9bff}
+
+/* scan */
+.scanbox{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
+@media (max-width:720px){.scanbox{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.qr{background:#fff;padding:18px;border-radius:22px;width:min(300px,78vw);box-shadow:0 24px 60px -30px rgba(0,0,0,.45)}
+.qr svg{display:block;width:100%;height:auto}
+
+.note{border-left:3px solid var(--accent);background:var(--card);padding:14px 18px;border-radius:0 12px 12px 0;color:var(--muted);font-size:16px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in,.nojs .reveal{opacity:1;transform:none}
+footer{padding:48px 0 64px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer p{margin:0 0 8px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body class="nojs">
+<nav id="nav"><div class="wrap">
+<a class="brand" href="#top">Ovalfort</a>
+<div class="links"><a href="#check">The check</a><a href="#deep">Deep dive</a><a href="#use">Where to use it</a><a href="#scan">Scan</a><a class="pill" href="#ask">Request a deep dive</a></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<p class="eyebrow">AI and privacy law, read against your company</p>
+<h1>Know where you stand before someone asks.</h1>
+<p class="sub">Ovalfort reads the EU AI Act, EU GDPR, UK GDPR and India's data-protection and cyber rules against your business, and shows the line of law behind every answer.</p>
+<div class="cta"><a class="btn primary" href="#scan">Get the free one-page check</a><a class="btn ghost" href="#deep">See the deep dive</a></div>
+<ul class="lawrow"><li>EU AI Act</li><li>EU GDPR</li><li>UK GDPR</li><li>India: DPDP Act and CERT-In</li></ul>
+</div></header>
+
+<main>
+<section id="check"><div class="wrap">
+<div class="split">
+<div class="reveal">
+<p class="kicker">Step one: the one-page check</p>
+<h2>Three minutes. One page. A first look.</h2>
+<p class="lede">Give us your website. We read your public pages and send a one-page PDF that names the laws that appear to reach you and what they are likely to ask of you.</p>
+<p>It is built to be honest about its limits. Where your public pages say too little, it does not guess. It says <em>not established</em>, shows you the sentence it relied on, and lists the questions only you can answer.</p>
+<p>That list is the point. It is the part a one-page scan cannot close.</p>
+</div>
+<div class="reveal">
+<div class="sample" aria-label="Illustration of a one-page reading">
+<small>Illustration, not a real company</small>
+<div class="row"><span>EU AI Act</span><span class="tag t-q">Not established</span></div>
+<div class="row"><span>EU GDPR</span><span class="tag t-ok">Appears to apply</span></div>
+<div class="row"><span>UK GDPR</span><span class="tag t-q">Not established</span></div>
+<div class="row"><span>India: DPDP and CERT-In</span><span class="tag t-q">Not established</span></div>
+<p style="margin:16px 0 0;font-size:14px;color:var(--muted)">Each "not established" is a question your customer, investor or regulator can ask you. A one-pager cannot answer it. A deep dive can.</p>
+</div>
+</div>
+</div>
+</div></section>
+
+<section class="alt" id="urgent"><div class="wrap">
+<p class="kicker reveal">Why it cannot wait</p>
+<h2 class="reveal">The first time someone asks should not be the first time you look.</h2>
+<p class="lede reveal">A funding round, a large customer's security review and a regulator's letter all ask the same things. The law sets the ceiling on what a mistake can cost.</p>
+<div class="grid g4">
+<div class="card reveal"><div class="big">4%</div><h3>EU and UK GDPR</h3><p>Fines of up to 4% of worldwide annual turnover (UK: or £17.5m, whichever is higher; EU: or €20m).</p></div>
+<div class="card reveal"><div class="big">7%</div><h3>EU AI Act</h3><p>Up to 7% of worldwide annual turnover, or €35m, for the most serious breaches.</p></div>
+<div class="card reveal"><div class="big">₹250 cr</div><h3>India DPDP Act</h3><p>Penalties of up to ₹250 crore under the Act's schedule, for failing to take reasonable security safeguards.</p></div>
+<div class="card reveal"><div class="big">6 hrs</div><h3>India CERT-In</h3><p>The Directions require certain cyber incidents to be reported within six hours of noticing them.</p></div>
+</div>
+<p class="reveal" style="margin-top:22px;color:var(--muted);font-size:14px">These are ceilings written into the law, not predictions about any company. Check the official texts for the exact conditions.</p>
+</div></section>
+
+<section id="deep"><div class="wrap">
+<p class="kicker reveal">Step two: the deep dive</p>
+<h2 class="reveal">The one-pager is the thermometer. The deep dive is the blood test.</h2>
+<p class="lede reveal">A voluntary, full reading of how your company actually works, tested against each law, with a written result you can act on and show.</p>
+
+<ol class="steps">
+<li class="reveal"><div><h3>We open a private workspace for your company</h3><p>Your own sign-in. Your reading is kept apart from every other company's.</p></div></li>
+<li class="reveal"><div><h3>You answer guided questions</h3><p>How you use AI, what personal data you hold, who processes it, how you handle a breach, and where your customers are. Plain questions, no legal training needed.</p></div></li>
+<li class="reveal"><div><h3>You add your own evidence</h3><p>Policies, contracts, records. You upload what you have. Where you have nothing, the reading says so, because that is useful to know.</p></div></li>
+<li class="reveal"><div><h3>You get a reading, law by law</h3><p>For each obligation that appears to apply: what it asks, whether your evidence meets it, where there is a gap, and where it cannot tell. Every finding links to the official text.</p></div></li>
+<li class="reveal"><div><h3>You leave with a fix list</h3><p>Ordered by how serious the gap is, as a report and a spreadsheet you can hand to your team.</p></div></li>
+</ol>
+
+<h3 class="reveal" style="margin:64px 0 6px;font-size:28px;letter-spacing:-.02em">What gets tested, and where</h3>
+<p class="reveal" style="color:var(--muted)">Choose a law.</p>
+<div class="seg" role="tablist" aria-label="Laws tested" data-group="laws">
+<button role="tab" aria-selected="true" aria-controls="p-ai" id="t-ai">EU AI Act</button>
+<button role="tab" aria-selected="false" aria-controls="p-eu" id="t-eu">EU GDPR</button>
+<button role="tab" aria-selected="false" aria-controls="p-uk" id="t-uk">UK GDPR</button>
+<button role="tab" aria-selected="false" aria-controls="p-in" id="t-in">India</button>
+</div>
+<div class="panel" id="p-ai" role="tabpanel" aria-labelledby="t-ai"><div class="card"><h3>EU AI Act</h3><ul>
+<li><strong>Your role.</strong> Whether the Act treats you as a provider, a deployer or something else, because the duties differ.</li>
+<li><strong>Risk category.</strong> Whether anything you build or use falls into a prohibited, high-risk or transparency-only group.</li>
+<li><strong>Paperwork.</strong> The documentation, oversight and transparency duties that come with your category.</li>
+</ul></div></div>
+<div class="panel" id="p-eu" role="tabpanel" aria-labelledby="t-eu" hidden><div class="card"><h3>EU GDPR</h3><ul>
+<li><strong>Lawful basis and notices.</strong> Why you may process the data, and whether people are told.</li>
+<li><strong>Processors and transfers.</strong> Contracts with the suppliers that touch the data, and data leaving the EU.</li>
+<li><strong>People's rights and breaches.</strong> How you answer a request, and what you do in the first 72 hours of a breach.</li>
+</ul></div></div>
+<div class="panel" id="p-uk" role="tabpanel" aria-labelledby="t-uk" hidden><div class="card"><h3>UK GDPR</h3><ul>
+<li><strong>The same core duties under UK law.</strong> The UK has its own version, and its own regulator, the ICO.</li>
+<li><strong>UK transfer rules.</strong> Moving data out of the UK follows UK mechanisms, which differ from the EU's.</li>
+<li><strong>Where the two differ.</strong> The reading shows them side by side so you do not do the work twice.</li>
+</ul></div></div>
+<div class="panel" id="p-in" role="tabpanel" aria-labelledby="t-in" hidden><div class="card"><h3>India: DPDP Act and CERT-In <span class="badge">Legal review pending</span></h3><ul>
+<li><strong>DPDP Act and Rules.</strong> Notice and consent, the rights of the people whose data you hold, breach reporting, and the extra duties for larger or higher-risk handlers.</li>
+<li><strong>CERT-In Directions.</strong> Incident reporting within six hours, keeping logs, and a named point of contact.</li>
+<li><strong>Honest status.</strong> The India part is built and sourced. An Indian advocate has not yet signed it off. We say so on every reading.</li>
+</ul></div></div>
+
+<div class="grid g3" style="margin-top:64px">
+<div class="card reveal"><h3>A missing answer is never "does not apply"</h3><p>If the evidence is thin, the reading says it cannot tell. It never turns silence into comfort.</p></div>
+<div class="card reveal"><h3>Citations are checked by code</h3><p>The model drafts and prioritises. Separate code checks that each quotation exists in the official text, word for word.</p></div>
+<div class="card reveal"><h3>You can trace every line</h3><p>Each finding points to a stored source and a dated record of how it was reached.</p></div>
+</div>
+</div></section>
+
+<section class="dark" id="use"><div class="wrap">
+<p class="kicker reveal">Where you can use it</p>
+<h2 class="reveal">A dated, sourced reading is easier to show than a promise.</h2>
+<p class="lede reveal">Pick the room you are walking into.</p>
+<div class="seg" role="tablist" aria-label="Where to use the reading" data-group="use" style="background:#141821;border-color:#262a33">
+<button role="tab" aria-selected="true" aria-controls="u-inv" id="b-inv" style="background:#f5f5f7;color:#0b0d12">Investors</button>
+<button role="tab" aria-selected="false" aria-controls="u-cus" id="b-cus">Customers</button>
+<button role="tab" aria-selected="false" aria-controls="u-reg" id="b-reg">Authorities</button>
+<button role="tab" aria-selected="false" aria-controls="u-brd" id="b-brd">Your board</button>
+<button role="tab" aria-selected="false" aria-controls="u-mkt" id="b-mkt">New markets</button>
+</div>
+<div class="panel" id="u-inv" role="tabpanel" aria-labelledby="b-inv"><div class="card"><h3>In front of investors</h3><p>Due diligence asks how you handle personal data and AI. Bring a dated reading and a list of what you are fixing, instead of saying you are on top of it. It is a better answer on a call, and a better document in a data room.</p></div></div>
+<div class="panel" id="u-cus" role="tabpanel" aria-labelledby="b-cus" hidden><div class="card"><h3>With large customers</h3><p>Security and privacy questionnaires arrive before contracts do. A structured reading gives you consistent answers, with the source behind each, and shortens the back-and-forth.</p></div></div>
+<div class="panel" id="u-reg" role="tabpanel" aria-labelledby="b-reg" hidden><div class="card"><h3>If an authority writes</h3><p>It shows you looked, when you looked, and what you did next. That is a record, not protection. It does not stop a regulator reaching its own view.</p></div></div>
+<div class="panel" id="u-brd" role="tabpanel" aria-labelledby="b-brd" hidden><div class="card"><h3>For your board and your team</h3><p>The fix list is ordered by seriousness, so the first conversation is about the three things that matter most, not a hundred that do not.</p></div></div>
+<div class="panel" id="u-mkt" role="tabpanel" aria-labelledby="b-mkt" hidden><div class="card"><h3>Before a new market</h3><p>Selling into the EU, the UK or India next? See what each one adds to your obligations before you commit the budget.</p></div></div>
+
+<div class="grid g2" style="margin-top:56px">
+<div class="card reveal"><h3>A differentiator, if you earn it</h3><p>Most start-ups answer "are you compliant?" with a template. If your reading comes out strong, you can show a sourced record of how you got there. We do not certify anyone. The reading is yours to use as proof of work.</p></div>
+<div class="card reveal"><h3>Why do it voluntarily</h3><p>Because finding a gap yourself, in private, costs a few weeks of work. Finding it in a customer's review or a regulator's letter costs more, and you pick neither the date nor the audience.</p></div>
+</div>
+</div></section>
+
+<section id="scan"><div class="wrap">
+<div class="scanbox">
+<div class="qr reveal" role="img" aria-label="QR code for the free one-page check">
+<svg viewBox="-2 -2 37 37" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><rect x="-2" y="-2" width="37" height="37" fill="#fff"/><path d="M0 0h7v1h-7zM12 0h1v1h-1zM14 0h1v1h-1zM16 0h2v1h-2zM19 0h1v1h-1zM21 0h1v1h-1zM23 0h2v1h-2zM26 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM9 1h1v1h-1zM11 1h2v1h-2zM15 1h2v1h-2zM18 1h1v1h-1zM20 1h2v1h-2zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h2v1h-2zM14 2h3v1h-3zM18 2h7v1h-7zM26 2h1v1h-1zM28 2h3v1h-3zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM15 3h1v1h-1zM17 3h2v1h-2zM20 3h1v1h-1zM22 3h3v1h-3zM26 3h1v1h-1zM28 3h3v1h-3zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM8 4h2v1h-2zM11 4h1v1h-1zM14 4h3v1h-3zM19 4h1v1h-1zM22 4h2v1h-2zM26 4h1v1h-1zM28 4h3v1h-3zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h2v1h-2zM13 5h1v1h-1zM18 5h1v1h-1zM21 5h2v1h-2zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h7v1h-7zM8 7h2v1h-2zM11 7h1v1h-1zM16 7h1v1h-1zM21 7h3v1h-3zM0 8h1v1h-1zM2 8h5v1h-5zM9 8h1v1h-1zM11 8h4v1h-4zM16 8h3v1h-3zM20 8h1v1h-1zM23 8h2v1h-2zM26 8h5v1h-5zM0 9h2v1h-2zM4 9h2v1h-2zM7 9h2v1h-2zM13 9h1v1h-1zM16 9h2v1h-2zM19 9h1v1h-1zM21 9h3v1h-3zM26 9h2v1h-2zM29 9h2v1h-2zM32 9h1v1h-1zM0 10h2v1h-2zM4 10h5v1h-5zM10 10h1v1h-1zM13 10h4v1h-4zM18 10h1v1h-1zM20 10h2v1h-2zM28 10h1v1h-1zM30 10h1v1h-1zM3 11h3v1h-3zM8 11h2v1h-2zM11 11h1v1h-1zM13 11h1v1h-1zM15 11h2v1h-2zM21 11h1v1h-1zM23 11h2v1h-2zM26 11h1v1h-1zM28 11h4v1h-4zM0 12h1v1h-1zM3 12h2v1h-2zM6 12h1v1h-1zM8 12h1v1h-1zM12 12h1v1h-1zM14 12h4v1h-4zM19 12h2v1h-2zM22 12h1v1h-1zM24 12h1v1h-1zM28 12h2v1h-2zM31 12h1v1h-1zM1 13h1v1h-1zM3 13h2v1h-2zM9 13h1v1h-1zM11 13h2v1h-2zM15 13h1v1h-1zM18 13h2v1h-2zM21 13h4v1h-4zM26 13h2v1h-2zM29 13h1v1h-1zM31 13h2v1h-2zM3 14h4v1h-4zM8 14h1v1h-1zM11 14h1v1h-1zM13 14h1v1h-1zM15 14h2v1h-2zM18 14h1v1h-1zM20 14h3v1h-3zM24 14h4v1h-4zM29 14h3v1h-3zM0 15h3v1h-3zM5 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM12 15h2v1h-2zM15 15h1v1h-1zM20 15h2v1h-2zM23 15h1v1h-1zM25 15h2v1h-2zM29 15h2v1h-2zM6 16h1v1h-1zM9 16h1v1h-1zM11 16h3v1h-3zM15 16h1v1h-1zM17 16h4v1h-4zM23 16h3v1h-3zM27 16h3v1h-3zM32 16h1v1h-1zM1 17h2v1h-2zM9 17h2v1h-2zM12 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1zM21 17h3v1h-3zM26 17h2v1h-2zM29 17h2v1h-2zM32 17h1v1h-1zM0 18h1v1h-1zM2 18h1v1h-1zM5 18h2v1h-2zM8 18h4v1h-4zM15 18h1v1h-1zM17 18h1v1h-1zM20 18h2v1h-2zM25 18h4v1h-4zM30 18h2v1h-2zM0 19h1v1h-1zM3 19h3v1h-3zM10 19h4v1h-4zM16 19h1v1h-1zM18 19h1v1h-1zM21 19h1v1h-1zM26 19h5v1h-5zM2 20h2v1h-2zM6 20h1v1h-1zM9 20h1v1h-1zM12 20h1v1h-1zM17 20h4v1h-4zM24 20h2v1h-2zM28 20h2v1h-2zM0 21h1v1h-1zM2 21h3v1h-3zM7 21h4v1h-4zM12 21h5v1h-5zM19 21h1v1h-1zM23 21h1v1h-1zM25 21h2v1h-2zM29 21h2v1h-2zM32 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM5 22h3v1h-3zM14 22h1v1h-1zM17 22h2v1h-2zM20 22h2v1h-2zM28 22h2v1h-2zM31 22h1v1h-1zM0 23h1v1h-1zM2 23h2v1h-2zM5 23h1v1h-1zM8 23h1v1h-1zM11 23h2v1h-2zM14 23h1v1h-1zM16 23h1v1h-1zM20 23h2v1h-2zM25 23h3v1h-3zM29 23h3v1h-3zM0 24h1v1h-1zM4 24h1v1h-1zM6 24h2v1h-2zM9 24h1v1h-1zM12 24h3v1h-3zM17 24h2v1h-2zM20 24h1v1h-1zM24 24h5v1h-5zM32 24h1v1h-1zM8 25h1v1h-1zM11 25h2v1h-2zM14 25h1v1h-1zM19 25h1v1h-1zM22 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h3v1h-3zM0 26h7v1h-7zM9 26h2v1h-2zM12 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM22 26h3v1h-3zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h2v1h-2zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h3v1h-3zM12 27h1v1h-1zM14 27h2v1h-2zM18 27h1v1h-1zM21 27h4v1h-4zM28 27h5v1h-5zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM8 28h1v1h-1zM13 28h3v1h-3zM17 28h3v1h-3zM24 28h6v1h-6zM31 28h2v1h-2zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h2v1h-2zM12 29h1v1h-1zM15 29h1v1h-1zM19 29h4v1h-4zM24 29h2v1h-2zM28 29h5v1h-5zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM8 30h1v1h-1zM11 30h2v1h-2zM15 30h3v1h-3zM20 30h1v1h-1zM26 30h2v1h-2zM29 30h2v1h-2zM0 31h1v1h-1zM6 31h1v1h-1zM10 31h5v1h-5zM18 31h6v1h-6zM28 31h3v1h-3zM0 32h7v1h-7zM8 32h1v1h-1zM10 32h3v1h-3zM15 32h6v1h-6zM23 32h2v1h-2zM26 32h2v1h-2zM29 32h1v1h-1zM31 32h1v1h-1z" fill="#000"/></svg>
+</div>
+<div class="reveal">
+<p class="kicker">Start here</p>
+<h2>Scan to get your free one-page check.</h2>
+<p class="lede" style="margin-bottom:22px">Point your phone camera at the code, enter your website, and the PDF is on its way in about three minutes. Free. Public website only.</p>
+<a class="btn primary" href="https://check-483899711360.europe-west2.run.app/?e=089f63">Open the check on this device</a>
+<a class="btn line" href="scan.html" style="margin-left:6px">Show the code full screen</a>
+</div>
+</div>
+</div></section>
+
+<section class="alt" id="ask"><div class="wrap narrow">
+<p class="kicker reveal">Step two, when you are ready</p>
+<h2 class="reveal">Request a deep dive.</h2>
+<p class="lede reveal">Tell us your website and which laws matter most. We will set up a private workspace for your company.</p>
+<a class="btn primary reveal" id="mail" href="mailto:rahulregtech@gmail.com?subject=Deep%20dive%20request&body=Company%3A%0AWebsite%3A%0ALaws%20that%20matter%20most%3A%0A">Email us to request a deep dive</a>
+</div></section>
+
+<section id="limits"><div class="wrap narrow">
+<h2 class="reveal" style="font-size:30px">What this is not</h2>
+<p class="note reveal">Ovalfort gives a preliminary view of likely obligations and gaps from public information and what you tell us. It is not legal advice, and it is not a finding that any company does or does not comply with any law. It does not certify or approve anyone. The India part has not yet had an Indian legal review. We do not cover the United States.</p>
+<h2 class="reveal" id="privacy" style="font-size:30px;margin-top:48px">Privacy</h2>
+<p class="reveal">This site sets no cookies and runs no analytics. If you use the scan, we ask for your name, work email and phone number so we can send you the PDF and, only if you tick the box, follow up. We read public web pages only, and we respect robots.txt. Please do not enter personal data about other people. To ask what we hold about you, or to have it deleted, email <a href="mailto:rahulregtech@gmail.com?subject=Privacy%20request">rahulregtech@gmail.com</a>.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<p>Ovalfort is in stealth. Company registration details will appear here once the company is incorporated.</p>
+<p>Built in the United Kingdom. Not legal advice.</p>
+</div></footer>
+
+<script>
+(function(){
+  var b=document.body;b.classList.remove('nojs');document.documentElement.classList.add('js');
+  var nav=document.getElementById('nav');
+  function sc(){nav.classList.toggle('scrolled',window.scrollY>8)}sc();addEventListener('scroll',sc,{passive:true});
+
+  document.querySelectorAll('.seg').forEach(function(seg){
+    var tabs=[].slice.call(seg.querySelectorAll('[role=tab]'));
+    var dark=seg.closest('.dark');
+    function show(t){
+      tabs.forEach(function(x){
+        var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+        document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+        if(dark){x.style.background=on?'#f5f5f7':'transparent';x.style.color=on?'#0b0d12':''}
+      });
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){show(t)});
+      t.addEventListener('keydown',function(e){
+        var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
+        if(n===null)return;n=(n+tabs.length)%tabs.length;tabs[n].focus();show(tabs[n]);e.preventDefault();
+      });
+    });
+    show(tabs[0]);
+  });
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
